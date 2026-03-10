@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Fox &amp; the Crow &mdash; A Type Sample</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦊</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --ink:       #1a120b;
+      --parchment: #f5ede0;
+      --gold:      #b8862e;
+      --rust:      #8b3a1f;
+      --cream:     #fdf6ec;
+      --shadow:    rgba(26,18,11,0.45);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--ink);
+      font-family: 'EB Garamond', Georgia, serif;
+      color: var(--ink);
+    }
+
+    /* ─── HERO ─────────────────────────────────────── */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image:
+        url('https://images.unsplash.com/photo-1474511320723-9a56873867b5?w=1400&q=80');
+      background-size: cover;
+      background-position: center center;
+      /* ghost back the image for legibility */
+      filter: brightness(0.38) sepia(0.5);
+    }
+
+    /* subtle vignette */
+    .hero-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at center, transparent 40%, rgba(10,6,3,0.75) 100%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 3rem 2rem;
+      max-width: 780px;
+    }
+
+    .ornament {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      color: var(--gold);
+      letter-spacing: .35em;
+      display: block;
+      margin-bottom: .6rem;
+    }
+
+    .hero-title {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: clamp(2.4rem, 6vw, 5rem);
+      color: var(--parchment);
+      line-height: 1.1;
+      text-shadow: 0 4px 32px var(--shadow), 0 1px 2px #000;
+      letter-spacing: .04em;
+    }
+
+    .hero-subtitle {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: clamp(1rem, 2.5vw, 1.4rem);
+      color: var(--gold);
+      margin-top: 1rem;
+      letter-spacing: .12em;
+      text-shadow: 0 2px 12px #000;
+    }
+
+    .rule {
+      width: 120px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      border: none;
+      margin: 1.6rem auto;
+    }
+
+    .hero-byline {
+      font-family: 'EB Garamond', serif;
+      font-size: 1rem;
+      color: rgba(245,237,224,0.65);
+      letter-spacing: .2em;
+      text-transform: uppercase;
+    }
+
+    /* ─── MAIN CONTENT ──────────────────────────────── */
+    main {
+      background: var(--cream);
+      position: relative;
+    }
+
+    /* decorative border strip */
+    main::before {
+      content: '';
+      display: block;
+      height: 8px;
+      background: repeating-linear-gradient(
+        90deg,
+        var(--gold) 0 14px,
+        var(--rust) 14px 28px
+      );
+    }
+
+    .content-wrap {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 4rem 2rem 5rem;
+    }
+
+    /* ─── DROP CAP ──────────────────────────────────── */
+    .story p:first-of-type::first-letter {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 5.2rem;
+      line-height: .82;
+      float: left;
+      margin: .06em .14em 0 0;
+      color: var(--rust);
+      text-shadow: 2px 2px 0 var(--gold);
+    }
+
+    .story p {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.22rem;
+      line-height: 1.85;
+      color: var(--ink);
+      margin-bottom: 1.4em;
+      text-align: justify;
+    }
+
+    /* ─── PULL QUOTE ────────────────────────────────── */
+    .pull-quote {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: clamp(1.3rem, 3vw, 1.75rem);
+      line-height: 1.45;
+      color: var(--rust);
+      border-left: 5px solid var(--gold);
+      padding: 1rem 0 1rem 1.6rem;
+      margin: 2.4rem 0 2.4rem 1rem;
+      position: relative;
+    }
+
+    .pull-quote::before {
+      content: '\201C';
+      font-size: 5rem;
+      line-height: 0;
+      position: absolute;
+      top: 1.4rem;
+      left: -.5rem;
+      color: var(--gold);
+      opacity: .35;
+    }
+
+    /* ─── FONT SHOWCASE ─────────────────────────────── */
+    .showcase {
+      background: var(--parchment);
+      border: 1px solid rgba(184,134,46,.35);
+      border-radius: 4px;
+      padding: 2.4rem 2.8rem;
+      margin: 3rem 0;
+    }
+
+    .showcase h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      letter-spacing: .3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 2rem;
+      border-bottom: 1px solid rgba(184,134,46,.3);
+      padding-bottom: .6rem;
+    }
+
+    .font-row {
+      margin-bottom: 2rem;
+    }
+
+    .font-label {
+      font-family: 'EB Garamond', serif;
+      font-size: .82rem;
+      letter-spacing: .25em;
+      text-transform: uppercase;
+      color: rgba(26,18,11,.45);
+      margin-bottom: .4rem;
+    }
+
+    .f-playfair      { font-family: 'Playfair Display', serif; font-size: 2.2rem; line-height: 1.2; color: var(--ink); }
+    .f-playfair-i    { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.6rem; color: var(--rust); }
+    .f-garamond      { font-family: 'EB Garamond', serif; font-size: 1.4rem; color: var(--ink); }
+    .f-garamond-i    { font-family: 'EB Garamond', serif; font-style: italic; font-size: 1.3rem; color: var(--ink); }
+    .f-cinzel        { font-family: 'Cinzel Decorative', serif; font-size: 1.45rem; color: var(--rust); letter-spacing: .05em; }
+
+    .abc { color: rgba(26,18,11,.5); font-size: .95em; margin-top: .3rem; }
+
+    /* ─── SPECIAL CHARACTERS TABLE ──────────────────── */
+    .chars-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: var(--rust);
+      margin-bottom: 1.2rem;
+    }
+
+    .chars-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: .8rem;
+    }
+
+    .char-card {
+      background: var(--parchment);
+      border: 1px solid rgba(184,134,46,.3);
+      border-radius: 3px;
+      padding: .8rem 1rem;
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+    }
+
+    .char-symbol {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: var(--gold);
+      min-width: 2rem;
+      text-align: center;
+    }
+
+    .char-info { font-size: .82rem; line-height: 1.4; color: var(--ink); }
+    .char-name { font-weight: 600; display: block; }
+    .char-code { font-family: monospace; color: var(--rust); font-size: .75rem; }
+
+    /* ─── FOOTER ────────────────────────────────────── */
+    footer {
+      background: var(--ink);
+      color: rgba(245,237,224,.5);
+      text-align: center;
+      padding: 2rem;
+      font-family: 'EB Garamond', serif;
+      font-size: .9rem;
+      letter-spacing: .12em;
+    }
+
+    footer span { color: var(--gold); }
+
+    @media (max-width: 600px) {
+      .content-wrap { padding: 2.5rem 1.2rem 3.5rem; }
+      .showcase { padding: 1.5rem; }
+      .pull-quote { margin-left: 0; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════ HERO ══════════════════════ -->
+<header class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <span class="ornament">❧ &nbsp; A&nbsp; Type&nbsp; Sample &nbsp; ❧</span>
+    <h1 class="hero-title">The Fox<br>&amp; the Crow</h1>
+    <hr class="rule">
+    <p class="hero-subtitle">A Fable by Aesop</p>
+    <p class="hero-byline" style="margin-top:1rem;">Showcasing&nbsp; Playfair Display &middot; EB&nbsp;Garamond &middot; Cinzel Decorative</p>
+  </div>
+</header>
+
+<!-- ═══════════════════════════════ STORY ═════════════════════ -->
+<main>
+  <div class="content-wrap">
+
+    <section class="story">
+      <img src="https://fablesofaesop.com/wp-content/uploads/2013/11/i097_th_fox_crow.jpg"
+           alt="Classic illustration of the Fox flattering the Crow"
+           style="float:right; width:260px; margin:0 0 1rem 2rem; border:6px solid var(--parchment); outline:1px solid rgba(184,134,46,.4); box-shadow:4px 6px 20px rgba(26,18,11,.2);">
+      <p>A&nbsp;Crow, having stolen a piece of cheese from a cottage window, flew with it to a tall oak tree, intending to enjoy her prize in peace. A&nbsp;Fox, who spied the Crow settling upon her lofty perch, resolved at once to gain the dainty morsel for himself. &ldquo;How well you look today, Miss Crow,&rdquo; he began, approaching with measured steps below. &ldquo;What a beautiful plumage you have! And is your voice as sweet as your appearance is charming?&rdquo;</p>
+
+      <blockquote class="pull-quote">
+        &ldquo;Vanity is the enemy of wisdom&mdash;and the ally of every fox who knows how to flatter.&rdquo;
+      </blockquote>
+
+      <p>The Crow, pleased beyond measure by this flattery, lifted her head and, opening her beak wide to demonstrate her finest singing, let the cheese fall to the ground. The Fox snapped it up and trotted away, remarking over his shoulder: &ldquo;That will do. That was all I wanted. In exchange for your cheese I will give you a piece of advice for the future&mdash;<em>do not trust flatterers.</em>&rdquo;</p>
+
+      <p><em>Moral:</em> &ldquo;The flatterer lives at the expense of those who will listen to him.&rdquo; &mdash; Aesop, c.&nbsp;620&ndash;564&nbsp;<abbr title="Before Common Era">BCE</abbr> &nbsp;&copy;&nbsp;Public Domain &middot; Project Gutenberg</p>
+    </section>
+
+    <!-- ════════ FONT SHOWCASE ════════ -->
+    <section class="showcase">
+      <h2>&#10022; &nbsp; Font Showcase &nbsp; &#10022;</h2>
+
+      <div class="font-row">
+        <div class="font-label">Cinzel Decorative &mdash; Display / Headlines</div>
+        <div class="f-cinzel">The Fox &amp; The Crow</div>
+        <div class="f-cinzel abc" style="font-size:.9rem; letter-spacing:.04em;">A B C D E F G H I J K L M N O P Q R S T U V W X Y Z</div>
+      </div>
+
+      <div class="font-row">
+        <div class="font-label">Playfair Display &mdash; Subheadings &amp; Pull Quotes</div>
+        <div class="f-playfair">Vanity is the enemy of wisdom.</div>
+        <div class="f-playfair-i">&ldquo;Do not trust flatterers.&rdquo;</div>
+        <div class="f-playfair abc" style="font-size:.88rem;">0 1 2 3 4 5 6 7 8 9 &amp; ? ! , . ; : &mdash; &ndash;</div>
+      </div>
+
+      <div class="font-row">
+        <div class="font-label">EB Garamond &mdash; Body Text</div>
+        <div class="f-garamond">A Crow stole a piece of cheese and flew to a tall oak. A Fox resolved to gain the dainty morsel for himself.</div>
+        <div class="f-garamond-i" style="margin-top:.4rem;">Italic: &ldquo;That will do. That was all I wanted.&rdquo;</div>
+      </div>
+    </section>
+
+    <!-- ════════ SPECIAL CHARACTERS ════════ -->
+    <section class="chars-section">
+      <h2>Printer&rsquo;s Marks &amp; Special Characters</h2>
+      <div class="chars-grid">
+        <div class="char-card">
+          <div class="char-symbol">&ldquo;&rdquo;</div>
+          <div class="char-info"><span class="char-name">Curly Quotes</span><span class="char-code">&amp;ldquo; &amp;rdquo;</span></div>
+        </div>
+        <div class="char-card">
+          <div class="char-symbol">&mdash;</div>
+          <div class="char-info"><span class="char-name">Em Dash</span><span class="char-code">&amp;mdash;</span></div>
+        </div>
+        <div class="char-card">
+          <div class="char-symbol">&ndash;</div>
+          <div class="char-info"><span class="char-name">En Dash</span><span class="char-code">&amp;ndash;</span></div>
+        </div>
+        <div class="char-card">
+          <div class="char-symbol">&copy;</div>
+          <div class="char-info"><span class="char-name">Copyright</span><span class="char-code">&amp;copy;</span></div>
+        </div>
+        <div class="char-card">
+          <div class="char-symbol">&trade;</div>
+          <div class="char-info"><span class="char-name">Trademark</span><span class="char-code">&amp;trade;</span></div>
+        </div>
+        <div class="char-card">
+          <div class="char-symbol">&reg;</div>
+          <div class="char-info"><span class="char-name">Registered</span><span class="char-code">&amp;reg;</span></div>
+        </div>
+        <div class="char-card">
+          <div class="char-symbol">&times;</div>
+          <div class="char-info"><span class="char-name">Multiplication</span><span class="char-code">&amp;times;</span></div>
+        </div>
+        <div class="char-card">
+          <div class="char-symbol">&frac12;</div>
+          <div class="char-info"><span class="char-name">Fraction ½</span><span class="char-code">&amp;frac12;</span></div>
+        </div>
+        <div class="char-card">
+          <div class="char-symbol">❧</div>
+          <div class="char-info"><span class="char-name">Floral Heart</span><span class="char-code">&amp;#10087;</span></div>
+        </div>
+        <div class="char-card">
+          <div class="char-symbol">&middot;</div>
+          <div class="char-info"><span class="char-name">Middle Dot</span><span class="char-code">&amp;middot;</span></div>
+        </div>
+      </div>
+    </section>
+
+  </div><!-- /content-wrap -->
+</main>
+
+<footer>
+  <p>Typefaces: <span>Cinzel Decorative &middot; Playfair Display &middot; EB Garamond</span> &mdash; via Google Fonts</p>
+  <p style="margin-top:.5rem;">Illustration: <em>The Fox &amp; the Crow</em> &mdash; FablesOfAesop.com &nbsp;&middot;&nbsp; Text: Public Domain &middot; Project Gutenberg</p>
+</footer>
+
+</body>
+</html>
